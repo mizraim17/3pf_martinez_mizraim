@@ -14,6 +14,7 @@ import { ValidaCalificacionPipe } from '../pipes/valida-calificacion.pipe';
 import { CursosRoutingModule } from './cursos-routing.module';
 import { CursosService } from './services/cursos.service';
 import { SharedModule } from '../shared/shared.module';
+import { FontSizeDirective } from '../directives/font-size.directive';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { SharedModule } from '../shared/shared.module';
     TablaComponent,
     ConcatNombreApellidoPipe,
     ValidaCalificacionPipe,
+    FontSizeDirective,
   ],
   imports: [
     CommonModule,

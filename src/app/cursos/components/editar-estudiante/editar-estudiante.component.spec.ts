@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EditarEstudianteComponent } from './editar-estudiante.component';
+import { CursosService } from '../../services/cursos.service';
 
 describe('EditarEstudianteComponent', () => {
   let component: EditarEstudianteComponent;
@@ -8,9 +9,8 @@ describe('EditarEstudianteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditarEstudianteComponent ]
-    })
-    .compileComponents();
+      declarations: [EditarEstudianteComponent, CursosService],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(EditarEstudianteComponent);
     component = fixture.componentInstance;
