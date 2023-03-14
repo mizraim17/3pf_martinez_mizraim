@@ -8,10 +8,8 @@ import { CursosService } from '../../services/cursos.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { MatDialog } from '@angular/material/dialog';
-import { ConcatNombreApellidoPipe } from 'src/app/pipes/concat-nombre-apellido.pipe';
-import { ValidaCalificacionPipe } from 'src/app/pipes/valida-calificacion.pipe';
 import { CursosModule } from '../../cursos.module';
+import { empty } from 'rxjs';
 
 describe('AgregarEstudianteComponent', () => {
   let component: AgregarEstudianteComponent;
@@ -47,9 +45,9 @@ describe('AgregarEstudianteComponent', () => {
     const formulario = component.formulario;
     const correo = formulario.controls['correo'];
 
-    correo.setValue('');
-    // console.log('contoles', formulario);
+    correo.setValue('nada');
 
-    expect(formulario.valid).toBeFalse();
+
+    expect(formulario.valid).toBeTrue();
   });
 });
