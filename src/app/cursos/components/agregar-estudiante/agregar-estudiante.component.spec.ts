@@ -40,6 +40,16 @@ describe('AgregarEstudianteComponent', () => {
   });
 
   it('should create', () => {
-    // expect(component).toBeTruthy();
+    expect(component).toBeTruthy();
+  });
+
+  it('Formulario no puede quedar vacio', () => {
+    const formulario = component.formulario;
+    const correo = formulario.controls['correo'];
+
+    correo.setValue('');
+    // console.log('contoles', formulario);
+
+    expect(formulario.valid).toBeFalse();
   });
 });

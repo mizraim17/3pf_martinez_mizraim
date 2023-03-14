@@ -3,7 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Estudiante } from '../../../models/estudiante';
 import { MatTableDataSource } from '@angular/material/table';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { CursosService } from '../../services/cursos.service';
 
 @Component({
@@ -16,9 +16,10 @@ export class EditarEstudianteComponent implements OnInit {
   suscripcion!: Subscription;
   formulario: FormGroup;
 
+  estudiantes$!: Observable<Estudiante[]>;
+
   constructor(
     private estudianteService: CursosService,
-    // public dialogRef: MatDialogRef<EditarEstudianteComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Estudiante
   ) {
     let controles: any = {
@@ -37,13 +38,16 @@ export class EditarEstudianteComponent implements OnInit {
       ]),
       becado: new FormControl(data.becado, []),
       id: new FormControl(data.id, []),
-
       foto: new FormControl(data.foto, [Validators.required]),
     };
     this.formulario = new FormGroup(controles);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.estudiantes$ = this.estudianteService.obtenerEstudiantesObservable();
+
+    console.log('this.estudiantes$', this.estudiantes$);
+  }
 
   ngOnDestroy(): void {
     // this.suscripcion.unsubscribe();

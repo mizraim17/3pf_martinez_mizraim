@@ -67,8 +67,6 @@ export class TablaComponent implements OnInit, OnDestroy {
       .subscribe((estudiante: Estudiante) => {
         console.log('estudante lista', estudiante.nombre);
 
-        alert(`Editado `);
-
         this.estudiantes$ =
           this.estudianteService.obtenerEstudiantesObservable();
 

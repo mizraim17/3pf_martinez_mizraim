@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-
 import { Estudiante } from '../../../models/estudiante';
 import { MatTableDataSource } from '@angular/material/table';
 import { Subscription } from 'rxjs';
@@ -15,14 +13,16 @@ import { Router } from '@angular/router';
 })
 export class AgregarEstudianteComponent {
   dataSource!: MatTableDataSource<Estudiante>;
-  formulario: FormGroup;
+  formulario!: FormGroup;
   suscripcion!: Subscription;
 
   constructor(
     private estudianteService: CursosService,
     private router: Router
-  ) {
-    let controles: any = {
+  ) {}
+
+  ngOnInit(): void {
+    this.formulario = new FormGroup({
       nombre: new FormControl('', [Validators.required]),
       apellido: new FormControl('', [Validators.required]),
       curso: new FormControl('', [Validators.required]),
@@ -36,11 +36,8 @@ export class AgregarEstudianteComponent {
       fechaNacimiento: new FormControl('', [Validators.required]),
       calificacion: new FormControl('', [Validators.required]),
       becado: new FormControl('', []),
-    };
-    this.formulario = new FormGroup(controles);
-  }
+    });
 
-  ngOnInit(): void {
     this.dataSource = new MatTableDataSource<Estudiante>();
     this.suscripcion = this.estudianteService
       .obtenerEstudiantesObservable()

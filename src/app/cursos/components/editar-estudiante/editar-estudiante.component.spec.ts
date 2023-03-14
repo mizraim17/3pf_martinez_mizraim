@@ -13,38 +13,33 @@ import { ValidaCalificacionPipe } from 'src/app/pipes/valida-calificacion.pipe';
 import { CursosModule } from '../../cursos.module';
 import { MaterialModule } from 'src/app/material.module';
 
-// describe('EditarEstudianteComponent', () => {
-//   let component: EditarEstudianteComponent;
-//   let fixture: ComponentFixture<EditarEstudianteComponent>;
+describe('EditarEstudianteComponent', () => {
+  let component: EditarEstudianteComponent;
+  let fixture: ComponentFixture<EditarEstudianteComponent>;
 
-//   beforeEach(async () => {
-//     await TestBed.configureTestingModule({
-//       declarations: [
-//         EditarEstudianteComponent,
-//         ConcatNombreApellidoPipe,
-//         ValidaCalificacionPipe,
-//       ],
-//       providers: [CursosService],
-//       imports: [
-//         CursosModule,
-//         MaterialModule,
-//         ReactiveFormsModule,
-//         BrowserAnimationsModule,
-//         BrowserModule,
-//         HttpClientModule,
-//         BrowserAnimationsModule,
-//         FormsModule,
-//         AppRoutingModule,
-//         MatDialogModule,
-//       ],
-//     }).compileComponents();
+  // beforeEach(async () => {
+  //   await TestBed.configureTestingModule({
+  //     declarations: [EditarEstudianteComponent],
+  //     providers: [CursosService],
+  //     imports: [
+  //       CursosModule,
+  //       MaterialModule,
+  //       ReactiveFormsModule,
+  //       BrowserAnimationsModule,
+  //       BrowserModule,
+  //       HttpClientModule,
+  //       BrowserAnimationsModule,
+  //       FormsModule,
+  //       AppRoutingModule,
+  //     ],
+  //   }).compileComponents();
 
-//     fixture = TestBed.createComponent(EditarEstudianteComponent);
-//     component = fixture.componentInstance;
-//     fixture.detectChanges();
-//   });
+  //   fixture = TestBed.createComponent(EditarEstudianteComponent);
+  //   component = fixture.componentInstance;
+  //   fixture.detectChanges();
+  // });
 
-//   it('should create', () => {
-//     // expect(component).toBeTruthy();
-//   });
-// });
+  it('should create', () => {
+    // expect(component).toBeTruthy();
+  });
+});

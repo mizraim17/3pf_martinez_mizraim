@@ -43,7 +43,7 @@ export class ListaComponent {
       })
       .afterClosed()
       .subscribe((estudiante: Estudiante) => {
-        console.log('estudante lista', estudiante);
+        console.log('estudante lista ===>', estudiante);
 
         alert(`Editado  `);
         this.estudiantes$ =
