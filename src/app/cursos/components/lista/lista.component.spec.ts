@@ -2,9 +2,12 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ListaComponent } from './lista.component';
 import { MaterialModule } from '../../../material.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CursosService } from '../../services/cursos.service';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('ListaComponent', () => {
   let component: ListaComponent;
@@ -12,8 +15,18 @@ describe('ListaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ListaComponent, CursosService],
-      imports: [MaterialModule, ReactiveFormsModule, BrowserAnimationsModule],
+      declarations: [ListaComponent],
+      imports: [
+        MaterialModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        BrowserModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        AppRoutingModule,
+      ],
+      providers: [CursosService],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ListaComponent);

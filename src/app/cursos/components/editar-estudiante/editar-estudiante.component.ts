@@ -18,7 +18,7 @@ export class EditarEstudianteComponent implements OnInit {
 
   constructor(
     private estudianteService: CursosService,
-    private dialogRef: MatDialogRef<EditarEstudianteComponent>,
+    // public dialogRef: MatDialogRef<EditarEstudianteComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Estudiante
   ) {
     let controles: any = {
@@ -68,7 +68,7 @@ export class EditarEstudianteComponent implements OnInit {
       .editarEstudiante(estudiante)
       .subscribe((estu: any) => {
         console.log('esttu->,', estu);
-        this.dialogRef.close(estu);
+        // this.dialogRef.close(estu);
       });
   }
 }
